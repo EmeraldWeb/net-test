@@ -20,5 +20,8 @@ module.exports = {
     ],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'react/jsx-filename-extension': [0], // https://github.com/airbnb/javascript/pull/985#issuecomment-239145468
+    'react/destructuring-assignment': [0],
+    'react/prop-types': [0],
+    'react/require-default-props': [0],
   },
 };

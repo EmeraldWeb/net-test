@@ -1,0 +1,17 @@
+.layout .layout_cell {
+  margin-bottom: 2rem;
+}
+
+.layout .layout_cell:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 960px) {
+  .layout .layout_cell {
+    margin-bottom: 1rem;
+  }
+
+  .layout .MuiTypography-h1 {
+    font-size: 4.5rem;
+  }
+}
