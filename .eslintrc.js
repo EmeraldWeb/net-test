@@ -19,5 +19,6 @@ module.exports = {
       { singleQuote: true, trailingComma: 'es5', printWidth: 100, endOfLine: 'auto' },
     ],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'react/jsx-filename-extension': [0], // https://github.com/airbnb/javascript/pull/985#issuecomment-239145468
   },
 };
