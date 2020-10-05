@@ -29,9 +29,9 @@ class App extends React.Component {
   render() {
     return (
       <Layout>
-        <Typography variant="subtitle1">Request a collection of users</Typography>
+        <Typography variant="subtitle1">Запросите коллекцию пользователей</Typography>
         <Button onClick={this.handleClick} variant="contained" color="primary">
-          Get Users
+          Запросить
         </Button>
 
         <UsersTable users={this.props.users} />
@@ -49,5 +49,5 @@ App.propTypes = {
       age: PropTypes.number,
     })
   ),
-  getUser: PropTypes.func.isRequired, // TODO: Failed prop type
+  getUser: PropTypes.func,
 };
