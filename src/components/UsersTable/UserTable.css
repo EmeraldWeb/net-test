@@ -1,0 +1,54 @@
+.userTable {
+  max-width: 800px;
+}
+
+.userTable .MuiTableRow-root.x_checked {
+  background-color: #9e99ff;
+}
+
+.userTable .MuiTableRow-root.x_checked .MuiTableCell-root {
+  color: #fff;
+}
+
+.tableCell_title {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .userTable {
+    max-width: 480px;
+  }
+
+  .userTable .MuiTableCell-head {
+    display: none;
+  }
+
+  .userTable .MuiTableCell-head.x_checkbox {
+    display: block;
+  }
+
+  .userTable .MuiTableRow-root {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #000;
+    border-radius: 8px;
+  }
+
+  .userTable .MuiTableRow-root:last-child {
+    margin-bottom: 0;
+  }
+
+  .userTable .MuiTableCell-body {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .tableCell_title {
+    display: inline;
+    margin-right: 20px;
+  }
+}
