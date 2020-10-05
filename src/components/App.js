@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Button, Typography, Container } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import Layout from './Layout/Layout';
+import UsersTable from './UsersTable/UsersTable';
 
 import { getUser } from '../actions/users';
 
@@ -25,20 +26,6 @@ class App extends React.Component {
     this.props.getUser();
   }
 
-  renderUserList() {
-    if (this.props.users) {
-      const users = [...this.props.users];
-      const list = users.map((user) => {
-        const { lastName, firstName, age, id } = user;
-        return <ol key={id}>{`${firstName} ${lastName}, age: ${age}`}</ol>;
-      });
-
-      return <ul>{list}</ul>;
-    }
-
-    return null;
-  }
-
   render() {
     return (
       <Layout>
@@ -47,7 +34,7 @@ class App extends React.Component {
           Get Users
         </Button>
 
-        <Container>{this.renderUserList()}</Container>
+        <UsersTable users={this.props.users} />
       </Layout>
     );
   }
