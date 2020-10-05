@@ -4,21 +4,17 @@ import { connect } from 'react-redux';
 import { Button, Typography, Container } from '@material-ui/core';
 import Layout from './Layout/Layout';
 
-import getUser from '../actions/users';
+import { getUser } from '../actions/users';
 
-const mapStateToProps = (state) => {
+const mapState = (state) => {
   const users = [...state.users];
   return { users };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  getUser: (params) => {
-    getUser(dispatch, params);
-  },
-});
+const mapDispatch = { getUser };
 
 export default
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(mapState, mapDispatch)
 class App extends React.Component {
   constructor(props) {
     super(props);
