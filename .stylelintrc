@@ -1,0 +1,16 @@
+{
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "block-no-empty": true,
+        "string-quotes": "single",
+        "no-duplicate-selectors": true,
+        "color-named": "never",
+        "selector-attribute-quotes": "always",
+        "function-url-quotes": "always",
+        "font-weight-notation": "numeric",
+        "font-family-name-quotes": "always-unless-keyword",
+        "function-calc-no-unspaced-operator": true,
+        "no-descending-specificity": null,
+        "at-rule-no-unknown": null
+    }
+}
