@@ -1,8 +1,13 @@
-import { GET_USERS } from '../constants/users';
+import { GET_USERS, GET_USERS_SUCCESS } from '../constants/users';
 import usersMock from '../mocks/users.json';
 
-export default async function getUser(dispatch) {
+export const getUser = () => async (dispatch) => {
+  dispatch({ type: GET_USERS });
+
   await setTimeout(() => {
-    dispatch({ type: GET_USERS, payload: usersMock });
+    const payload = usersMock;
+    if (payload) {
+      dispatch({ type: GET_USERS_SUCCESS, payload });
+    }
   }, Math.random() * 10 * 500);
-}
+};
