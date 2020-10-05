@@ -1,0 +1,20 @@
+{
+  "header": [
+    {
+      "type": "checkbox",
+      "value": "all"
+    },
+    {
+      "type": "firstName",
+      "value": "Имя"
+    },
+    {
+      "type": "lastName",
+      "value": "Фамилия"
+    },
+    {
+      "type": "age",
+      "value": "Возраст"
+    }
+  ]
+}
