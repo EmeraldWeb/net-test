@@ -9,6 +9,8 @@ import {
   TableContainer,
   Paper,
   Checkbox,
+  FormLabel,
+  Box,
 } from '@material-ui/core';
 import { header } from './mockTableHeader.json';
 import usersProcessing from './usersProcessing';
@@ -34,7 +36,7 @@ export default class UsersTable extends React.Component {
 
       props.users.forEach((user) => {
         if (checkedCollection[user.id] === undefined) {
-          checkedCollection[user.id] = false;
+          checkedCollection[user.id] = checkedCollection.all;
         }
       });
 
@@ -66,7 +68,7 @@ export default class UsersTable extends React.Component {
   renderTitle(title, text) {
     return (
       <>
-        <span className="tableCell_title">{`${title}:`}</span>
+        <span className="tableCell-title">{`${title}:`}</span>
         <span>{text}</span>
       </>
     );
@@ -74,7 +76,7 @@ export default class UsersTable extends React.Component {
 
   renderCheckbox(id, isChecked) {
     return (
-      <label htmlFor={id}>
+      <FormLabel htmlFor={id}>
         <Checkbox
           type="checkbox"
           id={id}
@@ -82,9 +84,8 @@ export default class UsersTable extends React.Component {
           onChange={this.handleChange}
           color="primary"
         />
-        {/* <input type="checkbox" id={id} checked={isChecked} onChange={this.handleChange} /> */}
         {id === 'all' ? 'Выделить всё' : null}
-      </label>
+      </FormLabel>
     );
   }
 
@@ -135,13 +136,29 @@ export default class UsersTable extends React.Component {
     return <TableBody>{tableRows}</TableBody>;
   }
 
+  renderLineOfSelected() {
+    const { checkedCollection } = this.state;
+    const users = [...this.props.users];
+    const namewOfSelectedUsers = [];
+
+    users.forEach((user) => {
+      if (checkedCollection[user.id]) {
+        namewOfSelectedUsers.push(user.firstName);
+      }
+    });
+
+    return <Box className="userTable-lineOfSelected">{namewOfSelectedUsers.join(', ')}</Box>;
+  }
+
   render() {
     return (
       <TableContainer component={Paper} className="userTable">
-        <Table>
+        <Table className="userTable-table">
           <TableHead>{this.renderTableRow(header)}</TableHead>
           {this.renderTableBody()}
         </Table>
+
+        {this.renderLineOfSelected()}
       </TableContainer>
     );
   }

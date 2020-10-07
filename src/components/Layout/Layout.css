@@ -1,13 +1,13 @@
-.layout .layout_cell {
+.layout .layout-cell {
   margin-bottom: 2rem;
 }
 
-.layout .layout_cell:last-child {
+.layout .layout-cell:last-child {
   margin-bottom: 0;
 }
 
 @media (max-width: 960px) {
-  .layout .layout_cell {
+  .layout .layout-cell {
     margin-bottom: 1rem;
   }
 
