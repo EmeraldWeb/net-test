@@ -12,7 +12,7 @@ export default class Layout extends React.Component {
 
   modifyChildren(child) {
     const props = {
-      className: `${child.props.className} layout_cell`,
+      className: `${child.props.className} layout-cell`,
     };
 
     return React.cloneElement(child, props);
@@ -21,7 +21,7 @@ export default class Layout extends React.Component {
   render() {
     return (
       <Container className="layout">
-        <div className="layout_cell">
+        <div className="layout-cell">
           <Header>Netology</Header>
         </div>
 

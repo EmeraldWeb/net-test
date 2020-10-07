@@ -10,13 +10,29 @@
   color: #fff;
 }
 
-.tableCell_title {
+.tableCell-title {
   display: none;
+}
+
+.userTable-lineOfSelected {
+  height: 40px;
+  padding: 10px;
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
   .userTable {
+    display: flex;
+    flex-direction: column;
     max-width: 480px;
+  }
+
+  .userTable-lineOfSelected {
+    order: 1;
+  }
+
+  .userTable .userTable-table {
+    order: 2;
   }
 
   .userTable .MuiTableCell-head {
@@ -47,7 +63,7 @@
     width: 100%;
   }
 
-  .tableCell_title {
+  .tableCell-title {
     display: inline;
     margin-right: 20px;
   }
