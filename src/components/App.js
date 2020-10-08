@@ -14,30 +14,17 @@ const mapState = (state) => {
 
 const mapDispatch = { getUser };
 
-export default
-@connect(mapState, mapDispatch)
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
+function App(props) {
+  return (
+    <Layout>
+      <Typography variant="subtitle1">Запросите коллекцию пользователей</Typography>
+      <Button onClick={props.getUser} variant="contained" color="primary">
+        Запросить
+      </Button>
 
-  handleClick() {
-    this.props.getUser();
-  }
-
-  render() {
-    return (
-      <Layout>
-        <Typography variant="subtitle1">Запросите коллекцию пользователей</Typography>
-        <Button onClick={this.handleClick} variant="contained" color="primary">
-          Запросить
-        </Button>
-
-        <UsersTable users={this.props.users} />
-      </Layout>
-    );
-  }
+      <UsersTable users={props.users} />
+    </Layout>
+  );
 }
 
 App.propTypes = {
@@ -51,3 +38,5 @@ App.propTypes = {
   ),
   getUser: PropTypes.func,
 };
+
+export default connect(mapState, mapDispatch)(App);

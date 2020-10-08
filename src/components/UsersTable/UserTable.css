@@ -18,6 +18,9 @@
   height: 40px;
   padding: 10px;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {
